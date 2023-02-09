@@ -1,23 +1,27 @@
-struct Type1 {};
-struct Type2 {};
+#pragma once
 
-template<typename SomeType>
-
-
-class FooBase
+namespace branched
 {
-    FooBase() {}
+    void procBranched1();
 
-    virtual ~FooBase() = default;
-};
+    void procBranched2();
 
-template<typename SomeType>
-class FooDerivate1
-{
-    ~FooDerivate1() {}
-
-    void process()
+    class FooBase
     {
+    public:
+        FooBase() {}
 
-    }
-};
+        virtual ~FooBase() = default;
+
+        virtual void process(bool type) = 0;
+    };
+
+    class FooDerivate : public FooBase
+    {
+    public:
+        ~FooDerivate() {}
+
+        void process(bool type) override;
+    };
+
+} // namespace branched;
