@@ -1,27 +1,53 @@
-#include <iostream>
+#pragma once
 
-struct Type1 {};
-struct Type2 {};
+#include <type_traits>
 
-template<typename SomeType>
-
-
-class BranchlessBase
+namespace branchless
 {
-    BranchlessBase() {}
-
-    virtual ~BranchlessBase() = default;
-
-    virtual void process() = 0;
-};
-
-template<typename SomeType>
-class BranchlessDerivate
-{
-    ~BranchlessDerivate() {}
-
-    void process()
+    struct Type1
     {
+    };
+    struct Type2
+    {
+    };
 
+    template <typename SomeType, std::enable_if_t<std::is_same_v<SomeType, Type1>, bool> = true>
+    void procBranchless()
+    {
+        int a = 1;
+        int b = a;
     }
-};
+
+    template <typename SomeType, std::enable_if_t<std::is_same_v<SomeType, Type2>, bool> = true>
+    void procBranchless()
+    {
+        int a = 1;
+        int b = a;
+    }
+
+    class FooBase
+    {
+    public:
+        FooBase() {}
+
+        virtual ~FooBase() = default;
+
+        virtual void process() = 0;
+    };
+
+    template <typename SomeType>
+    class FooDerivate : public FooBase
+    {
+    public:
+        ~FooDerivate() {}
+
+        void process() override
+        {
+            procBranchless<SomeType>();
+        }
+    };
+
+    
+    template class FooDerivate<Type1>;
+    template class FooDerivate<Type2>;
+} // namespace branchless;
