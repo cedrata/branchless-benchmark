@@ -20,4 +20,4 @@ class FooDerivate1
     {
 
     }
-}
+};
