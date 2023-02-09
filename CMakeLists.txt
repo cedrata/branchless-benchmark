@@ -16,7 +16,7 @@ Include(FetchContent)
 FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.0.1 # or a later release
+  GIT_TAG        v3.1.0
 )
 
 FetchContent_MakeAvailable(Catch2)
@@ -24,7 +24,8 @@ FetchContent_MakeAvailable(Catch2)
 add_executable(tests Tests/branched.cpp Tests/branchless.cpp)
 target_compile_features(tests PRIVATE cxx_std_20)
 
-# target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source)
+target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
-# include(${Catch2_SOURCE_DIR}/extras/Catch.cmake)
-# catch_discover_tests(Tests)
+include(${Catch2_SOURCE_DIR}/extras/Catch.cmake "${PROJECT_NAME}")
+
+catch_discover_tests(tests)
