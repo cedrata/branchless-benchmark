@@ -32,10 +32,13 @@ namespace branched
 
         void process(bool type) override
         {
-            if (type)
-                procBranched1();
-            else
-                procBranched2();
+            for (int i = 0; i < 100000; ++i)
+            {
+                if (type)
+                    procBranched1();
+                else
+                    procBranched2();
+            }
         }
     };
 

@@ -44,7 +44,10 @@ namespace branchless
 
         void process() override
         {
-            procBranchless<SomeType>();
+            for (int i = 0; i < 100000; ++i)
+            {
+                procBranchless<SomeType>();
+            }
         }
     };
 
