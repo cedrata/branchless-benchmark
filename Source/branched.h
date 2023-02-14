@@ -2,9 +2,17 @@
 
 namespace branched
 {
-    void procBranched1();
+    void procBranched1()
+    {
+        int a = 1;
+        int b = a;
+    }
 
-    void procBranched2();
+    void procBranched2()
+    {
+        int a = 1;
+        int b = a;
+    }
 
     class FooBase
     {
@@ -19,9 +27,16 @@ namespace branched
     class FooDerivate : public FooBase
     {
     public:
-        ~FooDerivate() {}
+        FooDerivate() {}
+        ~FooDerivate() override {}
 
-        void process(bool type) override;
+        void process(bool type) override
+        {
+            if (type)
+                procBranched1();
+            else
+                procBranched2();
+        }
     };
 
 } // namespace branched;

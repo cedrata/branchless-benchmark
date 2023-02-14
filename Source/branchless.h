@@ -39,7 +39,8 @@ namespace branchless
     class FooDerivate : public FooBase
     {
     public:
-        ~FooDerivate() {}
+        FooDerivate() {}
+        ~FooDerivate() override {}
 
         void process() override
         {
@@ -50,4 +51,4 @@ namespace branchless
     
     template class FooDerivate<Type1>;
     template class FooDerivate<Type2>;
-} // namespace branchless;
+} // branchless
