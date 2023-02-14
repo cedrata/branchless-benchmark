@@ -1,6 +1,6 @@
 #include <iostream>
-#include "./branched.h"
-#include "./branchless.h"
+#include "comparason/branched.h"
+#include "comparason/branchless.h"
 
 int main(void)
 {
