@@ -12,21 +12,21 @@ target_link_libraries("${PROJECT_NAME}")
 set_target_properties("${PROJECT_NAME}" PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_features(main PRIVATE cxx_std_20)
 
-# Include(FetchContent)
+Include(FetchContent)
 
-# FetchContent_Declare(
-#   Catch2
-#   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-#   GIT_TAG        v3.1.0
-# )
+FetchContent_Declare(
+  Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.1.0
+)
 
-# FetchContent_MakeAvailable(Catch2)
+FetchContent_MakeAvailable(Catch2)
 
-# add_executable(tests Tests/test.cpp)
-# target_compile_features(tests PRIVATE cxx_std_20)
+add_executable(tests Tests/test.cpp)
+target_compile_features(tests PRIVATE cxx_std_20)
 
-# target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source)
-# target_link_libraries(tests PRIVATE Catch2::Catch2WithMain "MainLib")
-# include(${Catch2_SOURCE_DIR}/extras/Catch.cmake "${PROJECT_NAME}")
+target_include_directories(tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source)
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain "${PROJECT_MAIN}")
+include(${Catch2_SOURCE_DIR}/extras/Catch.cmake "${PROJECT_NAME}")
 
-# catch_discover_tests(tests)
+catch_discover_tests(tests)
