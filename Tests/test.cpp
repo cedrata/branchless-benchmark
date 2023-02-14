@@ -2,8 +2,8 @@
 #include <catch2/matchers/catch_matchers_string.hpp>
 #include <catch2/benchmark/catch_benchmark.hpp>
 #include <memory>
-#include "branched.h"
-#include "branchless.h"
+#include "comparason/branched.h"
+#include "comparason/branchless.h"
 
 
 TEST_CASE("BRANCHED VS BRANCLESS")
