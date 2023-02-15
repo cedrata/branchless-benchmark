@@ -1,0 +1,101 @@
+Randomness seeded to: 2148117739
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tests is a Catch2 v3.1.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+BRANCHED VS BRANCLESS
+-------------------------------------------------------------------------------
+/Users/lucagreggio/Dev/branchless-benchmark/tests/test.cpp:10
+...............................................................................
+
+benchmark name                       samples       iterations    estimated
+                                     mean          low mean      high mean
+                                     std dev       low std dev   high std dev
+-------------------------------------------------------------------------------
+Branched code round 1: 10^1                                                    
+iterations                                     100          2506     5.7638 ms 
+                                         24.349 ns    24.1685 ns    25.2147 ns 
+                                        1.74907 ns  0.0768511 ns    4.17011 ns 
+                                                                               
+Branchless code round 1: 10^1                                                  
+iterations                                     100          2725     5.7225 ms 
+                                        22.5689 ns    22.1764 ns     23.331 ns 
+                                         2.5757 ns    1.33432 ns    3.86773 ns 
+                                                                               
+Branched code round 2: 10^2                                                    
+iterations                                     100           321     5.9064 ms 
+                                        181.098 ns    179.183 ns    186.356 ns 
+                                        14.0621 ns   0.542289 ns    29.5443 ns 
+                                                                               
+Branchless code round 2: 10^2                                                  
+iterations                                     100           367     5.9087 ms 
+                                        163.367 ns    163.238 ns    163.496 ns 
+                                       0.661567 ns   0.614533 ns   0.723154 ns 
+                                                                               
+Branched code round 3: 10^3                                                    
+iterations                                     100            35      6.034 ms 
+                                        1.61981 us    1.61956 us     1.6205 us 
+                                        1.92252 ns   0.735962 ns    4.06565 ns 
+                                                                               
+Branchless code round 3: 10^3                                                  
+iterations                                     100            42     5.9934 ms 
+                                         1.4541 us    1.45386 us    1.45427 us 
+                                        1.03057 ns   0.727051 ns    1.43851 ns 
+                                                                               
+Branched code round 4: 10^4                                                    
+iterations                                     100            35      6.041 ms 
+                                        1.73624 us    1.72679 us    1.76137 us 
+                                        71.6529 ns    29.2938 ns    137.047 ns 
+                                                                               
+Branchless code round 4: 10^4                                                  
+iterations                                     100            40      6.068 ms 
+                                        1.51178 us    1.51126 us    1.51342 us 
+                                        4.14162 ns   0.934468 ns    9.07278 ns 
+                                                                               
+Branched code round 5: 10^5                                                    
+iterations                                     100          2590      5.698 ms 
+                                        24.0699 ns    24.0224 ns    24.1142 ns 
+                                       0.233651 ns   0.209538 ns   0.264039 ns 
+                                                                               
+Branchless code round 5: 10^5                                                  
+iterations                                     100             1    14.9595 ms 
+                                        149.626 us    149.408 us    150.224 us 
+                                        1.68626 us    595.195 ns    3.48353 us 
+                                                                               
+Branched code round 6: 10^6                                                    
+iterations                                     100             1    171.079 ms 
+                                        1.71702 ms    1.71229 ms    1.72682 ms 
+                                        33.2959 us     17.376 us    55.1919 us 
+                                                                               
+Branchless code round 6: 10^6                                                  
+iterations                                     100           354     5.9118 ms 
+                                         168.35 ns    167.892 ns    169.612 ns 
+                                           3.57 ns    1.58006 ns    7.52053 ns 
+                                                                               
+Branched code round 7: 10^7                                                    
+iterations                                     100             1     1.71197 s 
+                                        17.3172 ms    17.2707 ms    17.3753 ms 
+                                        266.229 us    225.778 us    331.518 us 
+                                                                               
+Branchless code round 7: 10^7                                                  
+iterations                                     100             1     1.49428 s 
+                                        14.7443 ms    14.6967 ms    14.7965 ms 
+                                        253.051 us    201.702 us    341.298 us 
+                                                                               
+Branched code round 8: 10^8                                                    
+iterations                                     100             1     17.2126 s 
+                                        168.418 ms    167.891 ms    168.893 ms 
+                                        2.53152 ms    2.11494 ms    3.02774 ms 
+                                                                               
+Branchless code round 8: 10^8                                                  
+iterations                                     100             1     14.6949 s 
+                                        147.466 ms    147.037 ms    147.838 ms 
+                                        2.03143 ms    1.67277 ms    2.51379 ms 
+                                                                               
+
+===============================================================================
+test cases: 1 | 1 passed
+assertions: - none -
+
