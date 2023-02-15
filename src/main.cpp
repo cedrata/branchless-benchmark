@@ -8,9 +8,9 @@ int main(void)
     auto bless = branchless::FooDerivate<branchless::Type1>();
 
     std::cout << "Branched processing started...\n";
-    bched.process(true);
+    bched.process(100, true);
     std::cout << "Branchless processing started...\n";
-    bless.process();
+    bless.process(100);
 
     return 0;
 }

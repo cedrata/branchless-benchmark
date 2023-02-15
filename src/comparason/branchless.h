@@ -32,7 +32,7 @@ namespace branchless
 
         virtual ~FooBase() = default;
 
-        virtual void process() = 0;
+        virtual void process(size_t iterations) = 0;
     };
 
     template <typename SomeType>
@@ -42,9 +42,9 @@ namespace branchless
         FooDerivate() {}
         ~FooDerivate() override {}
 
-        void process() override
+        void process(size_t iterations) override
         {
-            for (int i = 0; i < 100000; ++i)
+            for (int i = 0; i < iterations; ++i)
             {
                 procBranchless<SomeType>();
             }

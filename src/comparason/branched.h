@@ -21,7 +21,7 @@ namespace branched
 
         virtual ~FooBase() = default;
 
-        virtual void process(bool type) = 0;
+        virtual void process(size_t iterations, bool type) = 0;
     };
 
     class FooDerivate : public FooBase
@@ -30,9 +30,9 @@ namespace branched
         FooDerivate() {}
         ~FooDerivate() override {}
 
-        void process(bool type) override
+        void process(size_t iterations, bool type) override
         {
-            for (int i = 0; i < 100000; ++i)
+            for (int i = 0; i < iterations; ++i)
             {
                 if (type)
                     procBranched1();
